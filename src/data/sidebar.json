@@ -1,0 +1,35 @@
+{
+    "name": "Anish Kumar",
+    "avatarIcon": "//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80",
+    "navigation": [
+        {
+            "label": "Home",
+            "icon": "home",
+            "path": "/home"
+        },
+        {
+            "label": "About",
+            "icon": "about",
+            "path": "/about"
+        },
+
+        {
+            "label": "Resume",
+            "icon": "resume",
+            "path": "/resume"
+        },
+
+        {
+            "label": "Portfolio",
+            "icon": "portfolio",
+            "path": "/portfolio"
+        },
+
+        {
+            "label": "Contact",
+            "icon": "contact",
+            "path": "/contact"
+        }
+    ],
+    "footer": "@2021 Im10Anish"
+}
