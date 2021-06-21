@@ -9,6 +9,9 @@ const SideBarstyled = styled.div`
     height: 100vh;
     position: fixed;
     background-color: var(--background-sidebar-color);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 `
 
 const SidebarHeader = ({ avatarSrc, name }) => (
@@ -21,7 +24,7 @@ const SidebarHeader = ({ avatarSrc, name }) => (
             borderBottom: '1px solid var(--white-color)',
         }}
     >
-        <Avatar size="xlarge" src={avatarSrc} />
+        <Avatar size="3xl" src={avatarSrc} />
         <Text>{name}</Text>
     </Box>
 )
@@ -32,6 +35,8 @@ const SidebarFooter = ({ footer }) => (
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: 50,
+            padding: 30,
+            borderTop: '1px solid var(--white-color)',
         }}
     >
         <Text size="xsmall">{footer}</Text>

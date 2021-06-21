@@ -5,26 +5,55 @@ import { Analytics, Clock } from 'grommet-icons'
 import { NavLink } from 'react-router-dom'
 
 const navigationIcons = {
-    home: <Analytics />,
-    about: <Clock />,
-    resume: <Clock />,
-    portfolio: <Clock />,
-    contact: <Clock />,
+    home: <Analytics color="white" />,
+    about: <Clock color="white" />,
+    resume: <Clock color="white" />,
+    portfolio: <Clock color="white" />,
+    contact: <Clock color="white" />,
 }
 
-const NavigationItem = styled(NavLink)`
-    color: var(--white);
+const NavigationItem = styled.li`
+    width: 100%;
+    text-align: center;
 `
-
-const SidebarButton = ({ icon, label, path }) => (
-    <Box direction="row" gap="xsmall" pad="xsmall">
-        {icon} <NavigationItem to={path}>{label}</NavigationItem>
-    </Box>
+const Label = styled(NavLink)`
+    color: var(--white-color);
+    display: block;
+    padding: 0.6rem 0;
+    position: relative;
+    z-index: 4;
+    &:hover {
+        cursor: pointer;
+    }
+    &:before {
+        background-color: var(--primary-color);
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 50%;
+        transition: all 0.4s cubic-bezier(1, -0.2, 0.25, 0.95);
+        z-index: 3;
+        opacity: 0.2;
+    }
+    &:hover::before {
+        width: 100%;
+        height: 100%;
+    }
+`
+const NavigationList = styled.ul``
+const SidebarButton = ({ isActive, label, path }) => (
+    <NavigationItem>
+        <Label isActive={isActive} to={path}>
+            {label}
+        </Label>
+    </NavigationItem>
 )
 
 const Navigation = ({ data }) => {
     return (
-        <Nav gap="medium" responsive={false}>
+        <NavigationList gap="medium" responsive={false}>
             {data.map((navigation) => {
                 return (
                     <SidebarButton
@@ -34,7 +63,7 @@ const Navigation = ({ data }) => {
                     />
                 )
             })}
-        </Nav>
+        </NavigationList>
     )
 }
 
