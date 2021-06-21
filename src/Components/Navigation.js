@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box, Nav } from 'grommet'
 import styled from 'styled-components'
 import { Analytics, Clock } from 'grommet-icons'
 import { NavLink } from 'react-router-dom'

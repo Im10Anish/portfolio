@@ -5,7 +5,7 @@ import particlesoptions from '../data/particles-config.json'
 const Particle = () => {
     return (
         <>
-            <Particles params={particlesoptions} />
+            <Particles width="100%" height="100vh" params={particlesoptions} />
         </>
     )
 }
